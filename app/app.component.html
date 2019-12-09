@@ -1,0 +1,42 @@
+<div>
+  <p>Working in App.component.html</p>
+
+  <label for='Fname'></label>
+  <input type='text' name='Fname' [(ngModel)]='name' />
+  <h3>{{name}}</h3>
+
+</div>
+<h4 [ngStyle]="{color: getColor()}">My name is {{firstName}} and my id is {{firstId}}</h4>
+
+<button type="button" class="btn btn-primary">Active Status</button>
+<hr/>
+
+<label for='firstName'>FirstName : </label>
+<input type='text' name=opname [(ngModel)]='iname' />
+<h1>hey {{iname}} </h1>
+<button type="button" class="btn btn-info" (click)="resetButton()">reset</button>
+
+<hr/>
+<button type="button" class="btn btn-primary" (click)="toggleFlag()">toggle</button>
+<p *ngIf='flag' else elseblock>hey inside if </p>
+<ng-template #elseblock>
+  Inside else block
+</ng-template>
+<hr/>
+<input type='text' placeholder="Enter name" [(ngModel)]='currentName' />
+<button type="button" class="btn btn-success" (click)="add()">Add</button>
+
+<li *ngFor="let nm of studentRoaster">{{nm}}</li>
+
+<hr/>
+<button type="button" class="btn btn-primary" (click)="toggleDisplay()">Toggle display</button>
+<p *ngIf="state">This is some paragraph</p>
+<p *ngFor="let click of counter" [ngStyle]="{color: getLength()}">{{click}}</p>
+
+<hr/>
+<h2>{{name1 | json}}</h2>
+<h2>{{300 | currency: 'INR'}} </h2>
+
+<a routerLink="FirstComponent">First</a> 
+<a routerLink="SecondComponent">Second</a> 
+<router-outlet></router-outlet>
